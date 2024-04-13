@@ -1,0 +1,21 @@
+name: go vet
+
+on:
+  pull_request:
+    branches:
+      - main
+    workflow_dispatch:
+
+jobs:
+  govet:
+    name: go vet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22.1
+      - name: Run go vet
+        run: go vet ./...
