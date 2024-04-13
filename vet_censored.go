@@ -6,4 +6,7 @@ func VetCensored() {
 	for i := range y {
 		println(y[i])
 	}
+
+	var Id int
+	println(Id)
 }
