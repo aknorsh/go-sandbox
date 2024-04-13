@@ -14,9 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.22.1
+          go-version-file: ./go.mod
       - name: Install vettool
         run: GOBIN=$(pwd) go install github.com/aknorsh/go-analysis-sandbox/cmd/mylint@latest
       - name: Run go vet
